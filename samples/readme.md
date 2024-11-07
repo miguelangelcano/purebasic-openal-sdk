@@ -1,38 +1,38 @@
-OpenAL Example Source Code
-==========================
+## OpenAL Example Source Code
 
 The example code is split into a number of simple applications, each
-designed to show a key feature of OpenAL.
-
+designed to show a key feature of OpenAL.  
+  
 The Samples directory includes the following: -
 
-\bin		Pre-compiled binaries
-\Media		Wave files used in the examples
-\Framework	Common code used in the examples
+**\Media** Wave files used in the examples  
+**\Framework** Common code used in the examples  
 
-Enumerate
----------
+***
+
+#### Enumerate
+
 Shows how to use the OpenAL device enumeration extension to locate
 all of the OpenAL devices on the user's system. The code also shows
 how to determine the capabilities of each device, including what
 version of OpenAL each device supports.
 
-PlayStatic
-----------
+#### PlayStatic
+
 Shows how to use OpenAL to load audio data into an AL buffer and
 play it using an OpenAL source.
 
-PlayStream
-----------
+#### PlayStream
+
 Shows how to use OpenAL's buffer queuing mechanism to stream audio
 to an OpenAL source.
 
-EFXEnumerate
-------------
+#### EFXEnumerate
+
 Shows how to detect support for the effect extension and to find out
 the effect capabilities of the AL device.
 
-EFXFilter
----------
+#### EFXFilter
+
 Shows how to use the EFX extension to create and use a low-pass
 filter object.
