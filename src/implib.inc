@@ -217,11 +217,10 @@ macro get_next_even_addr {
 	virtual
 		align 2
 		skip_bytes=$-$$
-		dd $
-		load obj__addr dword from $-4
+		obj__addr=$
 	end virtual
 	if skip_bytes
-		db 0Ah ; use LF for padding (Unix ar)
+		db 0Ah ; Unix ar padding
 	end if
 }
 
@@ -383,7 +382,6 @@ macro pbimplib dllname*,cconv*,argcount*,name*,pb_name,pubname {
 		do_memcpy dllname#.descr_data2,dllname#.descr_strtbl2+20,namelen
 		db 0
 		add_2_dir dllname#.descr_strtbl2,$-dllname#.descr_strtbl2
-		add_2_dir dllname#.descr_strtbl+4,25
 		dllname#.descr_strtbl_1 db 07Fh
 		times namelen db 0
 		do_memcpy dllname#.descr_data2, dllname#.descr_strtbl_1+1, namelen
@@ -730,7 +728,9 @@ null_import_descr_sym_tbl:
 	dd 0,4,0,1
 	db IMAGE_SYM_CLASS_EXTERNAL,0
 	dd 1Dh
+null_import_descr_sym:
 	db '__NULL_IMPORT_DESCRIPTOR',0
+	add_2_dir null_import_descr_sym, $-null_import_descr_sym
 	num_syms=num_symbols_indexed
 	symarr_size=str_tbl_size
 }
