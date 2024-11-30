@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14248944.svg)](https://doi.org/10.5281/zenodo.14248944)
+
 # OpenAL v1.0 and v1.1 SDK for PureBasic, 32-bit (Windows)
 
 **Note:** Tested with PureBasic versions up to 6.10 LTS. PureBasic v6.11
