@@ -1,0 +1,2 @@
+# Exclude batch files from the language statistics
+*.bat linguist-vendored
