@@ -6,7 +6,6 @@ designed to show a key feature of OpenAL.
 The Samples directory includes the following: -
 
 **\Media** Wave files used in the examples  
-**\Framework** Common code used in the examples  
 
 ***
 
