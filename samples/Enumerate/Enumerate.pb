@@ -5,20 +5,12 @@
 ; how to determine the capabilities of each device, including what
 ; version of OpenAL each device supports.
 
-; Copy the Pbopenal library to [PureBasic]\PureLibraries\UserLibraries
-; before compiling this sample program for the first time.
-
 ; Make sure you have OpenAL properly installed before running this
 ; program. You can download the redistributable OpenAL installer from
 ; the official OpenAL website: https://www.openal.org/downloads/
 
-; OpenAL constants:
-IncludeFile "..\..\include\al.pbi"
-IncludeFile "..\..\include\alc.pbi"
-
-; Common OpenAL Framework (OALF) code:
-; IncludeFile "..\Framework\framework_pb3.pb" ; PureBasic v3
-IncludeFile "..\Framework\framework_pb4.pb" ; PureBasic v4 and newer
+IncludeFile "..\..\include\openal.pbi" ; OpenAL constants
+IncludeFile "..\..\include\oalf.pb"    ; Common OpenAL Framework (OALF) code
 
 ; Initialize Console library.
 OpenConsole()
