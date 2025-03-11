@@ -3,22 +3,12 @@
 ; Shows how to detect support for the effect extension and to find out
 ; the effect capabilites of the AL device.
 
-; Copy the Pbopenal library to [PureBasic]\PureLibraries\UserLibraries
-; before compiling this sample program for the first time.
-
 ; Make sure you have OpenAL properly installed before running this
 ; program. You can download the redistributable OpenAL installer from
 ; the official OpenAL website: https://www.openal.org/downloads/
 
-; OpenAL constants:
-IncludeFile "..\..\include\al.pbi"
-IncludeFile "..\..\include\alc.pbi"
-IncludeFile "..\..\include\efx.pbi"
-IncludeFile "..\..\include\efx-creative.pbi"
-
-; Common OpenAL Framework (OALF) code:
-; IncludeFile "..\Framework\framework_pb3.pb" ; PureBasic v3
-IncludeFile "..\Framework\framework_pb4.pb" ; PureBasic v4 and newer
+IncludeFile "..\..\include\openal.pbi" ; OpenAL constants
+IncludeFile "..\..\include\oalf.pb"    ; Common OpenAL Framework (OALF) code
 
 Global OAL_function, OAL_obj
 
