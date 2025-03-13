@@ -3,24 +3,13 @@
 ; Shows how to use OpenAL's buffer queuing mechanism to stream audio
 ; to an OpenAL source.
 
-; Copy the Pbopenal library to [PureBasic]\PureLibraries\UserLibraries
-; before compiling this sample program for the first time.
-
 ; Make sure you have OpenAL properly installed before running this
 ; program. You can download the redistributable OpenAL installer from
 ; the official OpenAL website: https://www.openal.org/downloads/
 
-; OpenAL constants:
-IncludeFile "..\..\include\al.pbi"
-IncludeFile "..\..\include\alc.pbi"
-
-; Common OpenAL Framework (OALF) code:
-; IncludeFile "..\Framework\framework_pb3.pb" ; PureBasic v3
-IncludeFile "..\Framework\framework_pb4.pb" ; PureBasic v4 and newer
-
-; Common WAV file format related code:
-; IncludeFile "..\Framework\wave_pb3.pb" ; PureBasic v3
-IncludeFile "..\Framework\wave_pb4.pb" ; PureBasic v4 and newer
+IncludeFile "..\..\include\openal.pbi" ; OpenAL constants
+IncludeFile "..\..\include\oalf.pb"    ; Common OpenAL Framework (OALF) code
+IncludeFile "..\..\include\wave.pb"    ; WAV file format related code
 
 wavfile$               = "stereo.wav"
 #NUMBUFFERS            = 4
