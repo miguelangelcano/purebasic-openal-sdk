@@ -18,7 +18,7 @@
 ;    pubname  : Optional public name. This symbolic name allows calling an external
 ;               function directly (not using a thunk). If not specified, 'name'
 ;               prefixed with '__imp__' is used as the pubname.
-; Examples:
+; Example:
 ;    pbimplib openal32.dll, CDECL, 2, ord.1, alGenBuffers
 
 ; === CONFIG BEGIN ==================================================
