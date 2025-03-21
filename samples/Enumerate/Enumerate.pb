@@ -5,26 +5,34 @@
 ; how to determine the capabilities of each device, including what
 ; version of OpenAL each device supports.
 
-; Make sure you have OpenAL properly installed before running this
-; program. You can download the redistributable OpenAL installer from
-; the official OpenAL website: https://www.openal.org/downloads/
+; Make sure you have OpenAL properly installed before running the program.
+; You can download the redistributable OpenAL installer from the official
+; OpenAL website:
+;   https://www.openal.org/downloads/
+
+; This example is also compatible with OpenAL Soft, an LGPL-licensed
+; implementation of the OpenAL 3D API. The OpenAL Soft can be downloaded
+; from the official website:
+;   https://openal-soft.org/
+; Note: When using OpenAL Soft, rename soft_oal.dll to either
+;       openal32.dll (x86) or openal64.dll (x64).
 
 IncludeFile "..\..\include\openal.pbi" ; OpenAL constants
 IncludeFile "..\..\include\oalf.pb"    ; Common OpenAL Framework (OALF) code
 
-; Initialize Console library.
+; Initialize Console library
 OpenConsole()
 PrintN("Hello!!!")
 
-; See if we have any available OpenAL devices.
+; See if we have any available OpenAL devices
 If ListSize(OALF_devices()) <> 0
 
-	; List all the available OpenAL devices.
+	; List all the available OpenAL devices
 	PrintN("All Available OpenAL Devices:")
 	While NextElement(OALF_devices())
 		list_item$ = " " + OALF_devices()
 		xram_available = 0
-		; Open the device and select a context to check the version info.
+		; Open the device and select a context to check the version info
 		OAL_device = OALF_alcOpenDevice(OALF_devices())
 		If OAL_device <> 0
 			OAL_context = alcCreateContext(OAL_device, 0)
@@ -44,11 +52,11 @@ If ListSize(OALF_devices()) <> 0
 		If xram_available = 0 : DeleteElement(OALF_devices()) : EndIf
 	Wend
 
-	; Print the default device name.
+	; Print the default device name
 	PrintN("")
 	PrintN("Default device: " + OALF_GetDefaultDeviceName())
 
-	; List the devices supporting XRAM.
+	; List the devices supporting XRAM
 	PrintN("")
 	PrintN("Devices with XRAM support:")
 	If ListSize(OALF_devices()) = 0
@@ -61,7 +69,7 @@ If ListSize(OALF_devices()) <> 0
 	EndIf
 
 Else
-	; An empty device list means some kind of OpenAL error.
+	; An empty device list means some kind of OpenAL error
 	PrintN("-ERR: Could not initialize OpenAL")
 EndIf
 
