@@ -3,35 +3,42 @@
 ; Shows how to detect support for the effect extension and to find out
 ; the effect capabilites of the AL device.
 
-; Make sure you have OpenAL properly installed before running this
-; program. You can download the redistributable OpenAL installer from
-; the official OpenAL website: https://www.openal.org/downloads/
+; Make sure you have OpenAL properly installed before running the program.
+; You can download the redistributable OpenAL installer from the official
+; OpenAL website:
+;   https://www.openal.org/downloads/
+
+; This example is also compatible with OpenAL Soft, an LGPL-licensed
+; implementation of the OpenAL 3D API. The OpenAL Soft can be downloaded
+; from the official website:
+;   https://openal-soft.org/
+; Note: When using OpenAL Soft, rename soft_oal.dll to either
+;       openal32.dll (x86) or openal64.dll (x64).
 
 IncludeFile "..\..\include\openal.pbi" ; OpenAL constants
 IncludeFile "..\..\include\oalf.pb"    ; Common OpenAL Framework (OALF) code
 
 Global OAL_function, OAL_obj
 
-; Test if the given Effect/Filter is supported or not.
+; Test if the given Effect/Filter is supported or not
 Procedure TestSupport(s$, al_type, e.l)
 	CallCFunctionFast(OAL_function, OAL_obj, al_type, e)
 	If alGetError() = #AL_NO_ERROR : s$ + "YES" : Else : s$ + "NO" : EndIf
 	PrintN(s$)
 EndProcedure
 
-; Initialize Console library.
+; Initialize Console library
 OpenConsole()
 PrintN("Enumerate EFX Application")
 
-; See if we have any available OpenAL devices.
+; See if we have any available OpenAL devices
 If ListSize(OALF_devices()) = 0
 	PrintN("-ERR: Could not initialize OpenAL")
 Else
-
-	; Get the default device name.
+	; Get the default device name
 	defaultDeviceName$ = OALF_GetDefaultDeviceName()
 
-	; Print a menu with the available devices and highlight the default one.
+	; Print a menu with the available devices and highlight the default one
 	PrintN("")
 	PrintN("Select OpenAL device:")
 	index = 0
@@ -42,23 +49,21 @@ Else
 		PrintN(menu_option$)
 	Wend
 
-	; Wait for user input.
+	; Wait for user input
 	key_pressed_code = OALF_wait4numkeyevent()
 	If key_pressed_code = 0 Or key_pressed_code > index : CloseConsole() : End : EndIf
 
-	; Open the selected device.
+	; Open the selected device
 	SelectElement(OALF_devices(), key_pressed_code - 1)
 	OAL_device = OALF_alcOpenDevice(OALF_devices())
 	If OAL_device = 0
 		PrintN("-ERR: Could not open the specified device")
 	Else
-
-		; Create a context and make it the current context.
+		; Create a context and make it the current context
 		OAL_context = alcCreateContext(OAL_device, 0)
 		If OAL_context = 0
 			PrintN("-ERR: Could not create a context")
 		Else
-
 			alcMakeContextCurrent(OAL_context)
 			PrintN("")
 			PrintN("Opened " + OALF_devices() + " Device")
@@ -71,11 +76,11 @@ Else
 			GenAuxiliaryEffectSlots = OALF_alGetProcAddress("alGenAuxiliaryEffectSlots")
 			DelAuxiliaryEffectSlots = OALF_alGetProcAddress("alDeleteAuxiliaryEffectSlots")
 
-			; Check for EFX support.
+			; Check for EFX support
 			If OALF_alcIsExtensionPresent(OAL_device, "ALC_EXT_EFX") And GenEffects And DelEffects And GenFilters And DelFilters And GenAuxiliaryEffectSlots And DelAuxiliaryEffectSlots
 
 				; To determine how many Auxiliary Effects Slots are available,
-				; create as many as possible (up To 128) Until the call fails.
+				; create as many as possible (up To 128) Until the call fails
 				Dim EffectSlots.l(128)
 				For iEffectSlotsGenerated = 0 To 128
 					CallCFunctionFast(GenAuxiliaryEffectSlots, 1, @EffectSlots(iEffectSlotsGenerated))
@@ -85,10 +90,10 @@ Else
 				If iEffectSlotsGenerated > 1 Or iEffectSlotsGenerated = 0 : Print("s") : EndIf
 				PrintN("")
 
-				; Free the Auxiliary Effect Slots.
+				; Free the Auxiliary Effect Slots
 				CallCFunctionFast(DelAuxiliaryEffectSlots, iEffectSlotsGenerated, @EffectSlots(0))
 
-				; Retrieve the number of Auxiliary Effect Slots Sends available on each Source.
+				; Retrieve the number of Auxiliary Effect Slots Sends available on each Source
 				iSends = 0
 				alcGetIntegerv(OAL_device, #ALC_MAX_AUXILIARY_SENDS, 1, @iSends)
 				Print(Str(iSends) + " Auxiliary Send")
@@ -96,7 +101,7 @@ Else
 				PrintN(" per Source")
 
 				; To determine which Effects are supported, generate an effect object
-				; and try to set its type to the various effect enum values.
+				; and try to set its type to the various effect enum values
 				CallCFunctionFast(GenEffects, 1, @OAL_obj)
 				If alGetError() = #AL_NO_ERROR
 					OAL_function = OALF_alGetProcAddress("alEffecti")
@@ -123,7 +128,7 @@ Else
 				EndIf
 
 				; To determine which Filters are supported, generate a filter object
-				; and try to set its type to the various filter enum values.
+				; and try to set its type to the various filter enum values
 				CallCFunctionFast(GenFilters, 1, @OAL_obj)
 				If alGetError() = #AL_NO_ERROR
 					OAL_function = OALF_alGetProcAddress("alFilteri")
@@ -138,21 +143,14 @@ Else
 					; Delete filter object
 					CallCFunctionFast(DelFilters, 1, @OAL_obj)
 				EndIf
-
 			Else
 				PrintN("-ERR: EFX not supported")
 			EndIf
-
-			; Always deselect the current context before destroying it!
-			alcMakeContextCurrent(0)
+			alcMakeContextCurrent(0) ; Always deselect the current context before destroying it!
 			alcDestroyContext(OAL_context)
-
 		EndIf
-
 		alcCloseDevice(OAL_device)
-
 	EndIf
-
 EndIf
 
 PrintN("")
