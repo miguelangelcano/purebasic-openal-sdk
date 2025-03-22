@@ -3,7 +3,7 @@
 The example code is split into a number of simple applications, each designed to show a key feature of OpenAL.
 The Samples directory includes the following: -
 
-**\Media** Wave files used in the examples
+**\Media** Wave files used in the examples  
 **\bin**   Compiled binaries (this directory is created when running `build.bat`)
 
 ***
