@@ -1,7 +1,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14248943.svg)](https://doi.org/10.5281/zenodo.14248943)
 [![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:359a9a5d5297e96d1c47966341d3987628528472/)](https://archive.softwareheritage.org/swh:1:dir:359a9a5d5297e96d1c47966341d3987628528472;origin=https://doi.org/10.5281/zenodo.14248943;visit=swh:1:snp:81b1b9aaef6272680ca41ef01df14b5420f712bb;anchor=swh:1:rel:ef1a05e09dc2576ae9995c38c0863d221b764010;path=/)
 
-# OpenAL SDK for PureBasic, 32-bit (Windows)
+# OpenAL SDK for PureBasic, 32 and 64-bit (Windows)
 
 <img src='https://implib.sourceforge.io/OpenAL.png' align='left' hspace='8' vspace='3' alt="OpenAL"> **OpenAL** (for "Open Audio Library") is a cross-platform audio API complementary to OpenGL. It was specifically designed to render multichannel output of 3D arrangements of sound sources around the listener.  
 
