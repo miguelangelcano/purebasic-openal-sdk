@@ -7,7 +7,7 @@
 
 The SDK is compatible with the original OpenAL v1.0 and v1.1 and OpenAL Soft. The SDK includes the header files, API documentation and usage examples. The `openal32.dll` is not included, but it can be downloaded for free from the official OpenAL or OpenAL Soft websites.  
 
-**Note:** When using this SDK with PureBasic **v6.10 LTS** or earlier, it's necessary to set to `0` the following configuration option in `src\openal32.def` before compiling the OpenAL library:  
+**Note:** When using this SDK with PureBasic **v6.10 LTS** or earlier, it's necessary to set to `0` the following configuration option in `src\openal32.def` and `src\openal64.def` before compiling the OpenAL library:  
 
 `RENAME_AR_MEMBERS equ 1`
 
