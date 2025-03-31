@@ -14,7 +14,7 @@ The SDK is compatible with the original OpenAL v1.0 and v1.1 and [OpenAL Soft](h
 This is necessary for compatibility with the linker used in the previous PureBasic releases. Since PureBasic **v6.11** the linker is *lld-link*, while earlier versions used *polink*.  
 
 Make sure you have OpenAL installed before running the included examples. The redistributable OpenAL installer is available at the official [OpenAL website](https://www.openal.org/downloads/).
-[Mirror](http://web.archive.org/web/20080523200706/developer.creative.com/landing.asp?cat=1&sbcat=31&top=38). The SDK is also compatible with **OpenAL Soft**, an LGPL-licensed implementation of the  OpenAL 3D API. The OpenAL Soft can be downloaded from its official [website](https://openal-soft.org/).  
+[Mirror](http://web.archive.org/web/20080523200706/developer.creative.com/landing.asp?cat=1&sbcat=31&top=38). The SDK is also compatible with **OpenAL Soft**, an LGPL-licensed implementation of the  OpenAL 3D API. The OpenAL Soft can be downloaded from its official website.  
 
 Current release contains a complete  OpenAL API reference, which you can copy to your PureBasic Help directory to enable inline access from the IDE.  
 
