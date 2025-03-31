@@ -5,7 +5,7 @@
 
 <img src='https://implib.sourceforge.io/OpenAL.png' align='left' hspace='8' vspace='3' alt="OpenAL"> **OpenAL** (for "Open Audio Library") is a cross-platform audio API complementary to OpenGL. It was specifically designed to render multichannel output of 3D arrangements of sound sources around the listener.  
 
-The SDK is compatible with the original OpenAL v1.0 and v1.1 and OpenAL Soft. The SDK includes the header files, API documentation and usage examples. The `openal32.dll` is not included, but it can be downloaded for free from the official OpenAL or OpenAL Soft websites.  
+The SDK is compatible with the original OpenAL v1.0 and v1.1 and [OpenAL Soft](https://openal-soft.org/). The SDK includes the header files, API documentation and usage examples. The `openal32.dll` is not included, but it can be downloaded for free from the official OpenAL or OpenAL Soft websites.  
 
 **Note:** When using this SDK with PureBasic **v6.10 LTS** or earlier, it's necessary to set to `0` the following configuration option in `src\openal32.def` and `src\openal64.def` before compiling the OpenAL library:  
 
