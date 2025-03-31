@@ -20,7 +20,7 @@ The following security policies are applicable to the **PureBasic OpenAL SDK** s
 
 ## Reporting a Vulnerability
 
-Please, use the [Security Advisories](/vkamenar/purebasic-openal-sdk/security/advisories) to report vulnerabilities or any other security concerns.
+Please, use the [Security Advisories](https://github.com/vkamenar/purebasic-openal-sdk/security/advisories) to report vulnerabilities or any other security concerns.
 
 ## Security Update policy
 
