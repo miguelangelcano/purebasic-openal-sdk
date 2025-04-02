@@ -3,7 +3,7 @@
 
 # OpenAL SDK for PureBasic, 32 and 64-bit (Windows)
 
-<img src='https://vkamenar.github.io/implib-sdk/OpenAL.png' align='left' hspace='8' vspace='3' alt="OpenAL"> **OpenAL** (for "Open Audio Library") is a cross-platform audio API complementary to OpenGL. It was specifically designed to render multichannel output of 3D arrangements of sound sources around the listener.  
+<img src='https://vkamenar.github.io/pbopenal/OpenAL.png' align='left' hspace='8' vspace='3' alt="OpenAL"> **OpenAL** (for "Open Audio Library") is a cross-platform audio API complementary to OpenGL. It was specifically designed to render multichannel output of 3D arrangements of sound sources around the listener.  
 
 The SDK is compatible with the original OpenAL v1.0 and v1.1 and [OpenAL Soft](https://openal-soft.org/). The SDK includes the header files, API documentation and usage examples. The `openal32.dll` is not included, but it can be downloaded for free from the official OpenAL or OpenAL Soft websites.  
 
