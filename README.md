@@ -5,16 +5,16 @@
 
 <img src='https://vkamenar.github.io/pbopenal/OpenAL.png' align='left' hspace='8' vspace='3' alt="OpenAL"> **OpenAL** (for "Open Audio Library") is a cross-platform audio API complementary to OpenGL. It was specifically designed to render multichannel output of 3D arrangements of sound sources around the listener.  
 
-The SDK is compatible with the original OpenAL v1.0 and v1.1 and [OpenAL Soft](https://openal-soft.org/). The SDK includes the header files, API documentation and usage examples. The `openal32.dll` is not included, but it can be downloaded for free from the official OpenAL or OpenAL Soft websites.  
+The SDK is compatible with the original OpenAL v1.0 and v1.1 and OpenAL Soft. The SDK includes the header files, API documentation and usage examples. The OpenAL DLL is not included, but it can be downloaded for free from the official OpenAL or OpenAL Soft websites.  
 
-**Note:** When using this SDK with PureBasic **v6.10 LTS** or earlier, it's necessary to set to `0` the following configuration option in `src\openal32.def` and `src\openal64.def` before compiling the OpenAL library:  
-
-`RENAME_AR_MEMBERS equ 1`
-
-This is necessary for compatibility with the linker used in the previous PureBasic releases. Since PureBasic **v6.11** the linker is *lld-link*, while earlier versions used *polink*.  
+> **Note:** When using this SDK with PureBasic **v6.10 LTS** or earlier, it's necessary to set to `0` the following configuration option in `src\openal32.def` and `src\openal64.def` before compiling the OpenAL library:  
+> 
+> `RENAME_AR_MEMBERS equ 1`
+> 
+> This is necessary for compatibility with the linker used in the previous PureBasic releases. Since PureBasic **v6.11** the linker is *lld-link*, while earlier versions used *polink*.  
 
 Make sure you have OpenAL installed before running the included examples. The redistributable OpenAL installer is available at the official [OpenAL website](https://www.openal.org/downloads/).
-[Mirror](http://web.archive.org/web/20080523200706/developer.creative.com/landing.asp?cat=1&sbcat=31&top=38). The SDK is also compatible with **OpenAL Soft**, an LGPL-licensed implementation of the  OpenAL 3D API. The OpenAL Soft can be downloaded from its official website.  
+[Mirror](http://web.archive.org/web/20080523200706/developer.creative.com/landing.asp?cat=1&sbcat=31&top=38). The SDK is also compatible with **[OpenAL Soft](https://openal-soft.org/)**, an LGPL-licensed implementation of the  OpenAL 3D API. The OpenAL Soft can be downloaded from its official website.  
 
 Current release contains a complete  OpenAL API reference, which you can copy to your PureBasic Help directory to enable inline access from the IDE.  
 
